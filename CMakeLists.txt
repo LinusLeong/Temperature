@@ -1,1 +1,6 @@
-
+cmake_minimum_required(VERSION 2.8)
+project(temperaure)
+include_directories("${CMAKE_SOURCE_DIR}/include")
+aux_source_directory("${CMAKE_SOURCE_DIR}" SOURCE_FILES)
+add_executable(temperature ${SOURCE_FILES})
+install(TARGETS temperature DESTINATION bin)
