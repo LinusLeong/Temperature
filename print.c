@@ -1,9 +1,13 @@
 /*
  * print.c
+
  *
  *  Created on: 22 Jan, 2014
  *      Author: leenux
  */
+
+#include <stdio.h>
+#include "print.h"
 
 void printhelp(void)
 {
