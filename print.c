@@ -21,7 +21,7 @@ void printhelp(void)
 
 int getOption(int num, char ** str)
 {
-	short i, o=0;
+	short i, o=-1;
 	for (i=0;i<num;i++)
 		{
 			switch(str[i][1])
