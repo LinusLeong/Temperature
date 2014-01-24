@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include "colors.h"
 #include "print.h"
-
-#define VER_MAJOR 0
-#define VER_MINOR 1
-#define TYPE_NUM 3
+#include "main.h"
 
 void printhelp(void);
 
