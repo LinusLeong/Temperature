@@ -24,27 +24,28 @@ int getOption(int num, char ** str)
 	short i, o=-1;
 	for (i=0;i<num;i++)
 		{
-			switch(str[i][1])
-			{
-				case 'l':
-					o = 0;
-					break;
-				case 'h':
-					o = 1;
-					break;
-				case 'f':
-					o = 2;
-					break;
-				case 'a':
-					o = 3;
-					break;
-				case 'c':
-					o = 4;
-					break;
-				default:
-					o = -1;
-					break;
-			}
+			if(str[i][0]=='-'){
+				switch(str[i][1])
+				{
+					case 'l':
+						o = 0;
+						break;
+					case 'h':
+						o = 1;
+						break;
+					case 'f':
+						o = 2;
+						break;
+					case 'a':
+						o = 3;
+						break;
+					case 'c':
+						o = 4;
+						break;
+					default:
+						o = -1;
+						break;
+			}}
 		}
 	return (int)o;
 }
