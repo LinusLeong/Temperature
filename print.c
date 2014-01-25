@@ -42,6 +42,7 @@ int getOption(int num, char ** str)
 					o = 4;
 					break;
 				default:
+					o = -1;
 					break;
 			}
 		}

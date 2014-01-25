@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "colors.h"
 #include "print.h"
 #include "main.h"
@@ -8,17 +9,17 @@ void printhelp(void);
 int main(int argc, char **argv)
 {
 	char types[TYPE_NUM][10] = {"celsius", "fahrenheit", "kelvin"};
-	int option;
-	int i;
+	int option=-1;
+	int i, start;
 	if(argc < 2){
 		printf(RED"Error: Not enough arguments given\n"RESET);
 		printhelp();
+		return 0;
 	}
+
 	option = getOption(argc, argv);
-	printf("%d\n", option);
 	switch(option)
 	{
-	case -1: break;
 	case 0:
 		printf("==<Types Available>==\n");
 		for (i=0;i<TYPE_NUM;i++)
@@ -28,20 +29,32 @@ int main(int argc, char **argv)
 	case 1:
 		return 0;
 	case 2:
-		break;
+		return 0;
 	case 3:
-		break;
+		return 0;
 	case 4:
-		break;
+		return 0;
 	default:
-		printf("An Error Occured!\n");
+		printf("No option given.\n");
 		break;
 	}
-	switch(option)
+
+	printf("%d\n", getFrom(argc, argv, types));
 	printf("Option Chosed: %u\n", option);
 	return 0;
 }
 
+int getFrom(int size, char **str, char source[][10])
+{
+	int i, n;
+	for (i=0; i<TYPE_NUM;i++) // loop though the source
+	{
+		for (n=0;n<size;n++) // loop through args
+			if(!strncmp(str[n], source[i], ACCURACY))
+				return n; //match
+	}
+	return -1;
+}
 
 
 
