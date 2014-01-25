@@ -16,29 +16,6 @@ int main(int argc, char **argv)
 		return 0;
 	}
 
-	option = getOption(argc, argv);
-	printf("%d\n", option);
-	switch(option)
-	{
-	case 0:
-		printf("==<Types Available>==\n");
-		for (i=0;i<TYPE_NUM;i++)
-			printf("%s\n", types[i]);
-		printf("=====================\n");
-		return 0;
-	case 1:
-		return 0;
-	case 2:
-		break;
-	case 3:
-		return 0;
-	case 4:
-		return 0;
-	default:
-		printf("No option given.\n");
-		break;
-	}
-
 	start = getFrom(argc, argv, types);
 	from = getType(start, argv, types);
 	printf("%d\t%d\n", start, from);
