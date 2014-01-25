@@ -14,5 +14,6 @@
 #define ACCURACY 3
 
 int getFrom(int size, char **str, char source[][10]);
+int getType(int pos, char **str, char source[][10]);
 
 #endif /* MAIN_H_ */
